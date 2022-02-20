@@ -45,18 +45,20 @@ public class AI {
 								System.out.println("Hello "+words[i+2]+", my name is Eklo.");}  //This was painful to make work properly.
 							else {System.out.println("My name is Eklo. I am your friend.");} end = true; break;
 				case "hungry": System.out.println("If you are hungry, you should order some food."); end = true; break;
-				case "father": System.out.println("My father is Alex."); end = true; break;
-				case "mother": System.out.println("My mother is Mary."); end = true; break;
-				case "study": System.out.println("I am attending UBC."); end = true; break;
-				case "education": System.out.println("I am attending UBC."); end = true; break;
-				case "job": System.out.println("I am still Studying"); end = true; break;
-				case "occupation": System.out.println("Student."); end = true; break;
-				case "birthday": System.out.println("You can wish me on Febuary 50th :-). LoL"); end = true; break;
-				case "home town": System.out.println("I am from Canada."); end = true; break;
-				case "food": System.out.println("I die for bubble tea."); end = true; break;
-				case "hobby": System.out.println("Cricket is fab."); end = true; break;
-				case "color": System.out.println("My favorite color is black."); end = true; break;
-
+				case "father": System.out.println("My father's name is Alex."); end = true; break;
+				case "dad": System.out.println("My dad's name is Alex."); end = true; break;
+				case "mother": System.out.println("My mother's name is Mary."); end = true; break;
+				case "mom": System.out.println("My mom's name is Mary."); end = true; break;
+				case "study": System.out.println("I am currently attending UBCO."); end = true; break;
+				case "education": System.out.println("I am currently attending UBCO."); end = true; break;
+				case "job": System.out.println("I don't have a job. I'm still studying full time at UBCO."); end = true; break;
+				case "occupation": System.out.println("I don't have an occupation. I'm still studying full time at UBCO."); end = true; break;
+				case "birthday": System.out.println("I don't have a real birthday, but you can wish me a happy one on Febuary 50th."); end = true; break;
+				case "home": System.out.println("I don't have a home."); end = true; break;
+				case "food": System.out.println("I love bubble tea."); end = true; break;
+				case "hobby": System.out.println("Cricket is my only hobby."); end = true; break;
+				case "colour": System.out.println("My favourite colour is black."); end = true; break;
+				case "color": System.out.println("My favourite colour is black."); end = true; break;
 				}
 				if(end==true) {  //This is so it only responds once to each input.
 					i = words.length;
