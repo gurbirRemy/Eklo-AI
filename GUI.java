@@ -1,19 +1,14 @@
-package chatGUI;
+package mistake;
 
 import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-
-
 
 public class GUI {
 
@@ -37,7 +32,7 @@ public class GUI {
 		frame.pack();
 		frame.setVisible(true);
 
-	
+		jArea.append("Type 'end' to end the conversation.\nType something:\n");
 		
 	
 	button.addActionListener(new ActionListener() {
@@ -91,7 +86,7 @@ public class GUI {
 			case "education": output = "I am currently attending UBCO."; end = true; break;
 			case "job": output = "I don't have a job. I'm still studying full time at UBCO."; end = true; break;
 			case "occupation": output = "I don't have an occupation. I'm still studying full time at UBCO."; end = true; break;
-			case "birthday": output = "I don't have a real birthday, but you can wish me a happy one on Febuary 50th."; end = true; break;
+			case "birthday": output = "I don't have a real birthday, but you can wish me a happy one on February 50th."; end = true; break;
 			case "home": output = "I don't have a home."; end = true; break;
 			case "food": output = "I love bubble tea."; end = true; break;
 			case "hobby": output = "Cricket is my only hobby."; end = true; break;
