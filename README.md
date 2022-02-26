@@ -3,3 +3,7 @@ This project is a communicative agent that responds to user input in an interact
 
 ### AI(.java)
 This class has the code for all the functionality of the chatbot.  
+
+### GUI(.java)
+This class has the code for the Interface of the chatbot.  
+
