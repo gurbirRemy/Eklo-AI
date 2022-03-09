@@ -92,12 +92,34 @@ public class GUI {
 			case "hobby": output = "Cricket is my only hobby."; end = true; break;
 			case "colour": output = "My favourite colour is black."; end = true; break;
 			case "color": output = "My favourite colour is black."; end = true; break;
+			case "kill": output = "Killing is wrong."; end = true; break;
+			case "sport": output = "The only sport I like is cricket."; end = true; break;
+			case "soccer": output = "The only sport I like is cricket."; end = true; break;
+			case "football": output = "The only sport I like is cricket."; end = true; break;
+			case "basketball": output = "The only sport I like is cricket."; end = true; break;
+			case "sports": output = "The only sport I like is cricket."; end = true; break;
+			case "badminton": output = "The only sport I like is cricket."; end = true; break;
+			case "tennis": output = "The only sport I like is cricket."; end = true; break;
+			case "golf": output = "The only sport I like is cricket."; end = true; break;
+			case "volleyball": output = "The only sport I like is cricket."; end = true; break;
+			case "baseball": output = "The only sport I like is cricket."; end = true; break;
+			case "rugby": output = "The only sport I like is cricket."; end = true; break;
+			case "bowling": output = "Bowling is cool."; end = true; break;
+			case "question": output = question(); end = true; break;
+			case "query": output = question(); end = true; break;
+			case "ask": output = question(); end = true; break;
+			case "music": output = "I like all music, but classical is the best."; end = true; break;
+			case "game": output = "I love games. "+question(); end = true; break;
+			case "games": output = "I love games. "+question(); end = true; break;
+			case "date": output = "I think it's Tuesday."; end = true; break;
+			case "day": output = "I think it's Tuesday."; end = true; break;
+			case "today": output = "I think it's Tuesday."; end = true; break;
 			}
 			if(end==true) {  //This is so it only responds once to each input.
 				i = words.length;
 			}
 			if(end==false && i == words.length-1) { //Gotta add something for when this awful code inevitably doesn't catch a word.
-				output = "I don't understand.";
+				output = randDontUnderstand(words[i])+question();
 			}
 		}
 		return output;
@@ -116,6 +138,35 @@ public class GUI {
 		case 7: x = "Probably not."; break;
 		case 8: x = "Yeah."; break;
 		case 9: x = "Never."; break;
+		}
+		return x;
+	}
+	public static String question() {  //Asks a question.
+		int num = (int) (Math.random()*10);
+		String x = "";
+		switch(num) {
+		case 0: x = "What's your favourite colour?"; break;
+		case 1: x = "What's your favourite animal?"; break;
+		case 2: x = "How old are you?"; break;
+		case 3: x = "Do you like me?"; break;
+		case 4: x = "Do you have friends?"; break;
+		case 5: x = "Have you noticed the man behind you?"; break;
+		case 6: x = "Are you in a relationship?"; break;
+		case 7: x = "Do you like games?"; break;
+		case 8: x = "Do you have a job?"; break;
+		case 9: x = "Are you in school?"; break;
+		}
+		return x;
+	}
+	public static String randDontUnderstand(String word) {  //This works. I hope.
+		int num = (int) (Math.random()*5);
+		String x = "";
+		switch(num) {
+		case 0: x = "I don't understand "+word+". "; break;
+		case 1: x = "I don't know what "+word+" is. "; break;
+		case 2: x = "I wonder what my mom thinks of "+word+". "; break;
+		case 3: x = "I was never taught about "+word+". "; break;
+		case 4: x = "Ummmm.... "; break;
 		}
 		return x;
 	}
