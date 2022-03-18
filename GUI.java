@@ -70,17 +70,10 @@ public class GUI {
 		String[] str2= p2.NER(x);
 		ArrayList<String> str3= p3.CoreRes(x);
 
-		// for(int i=0; i < str.length;i++){
-		// 	if(str[i].contains("be")){
-		// 		str[i] = null;
-		// 		str1[i] = null;
-		// 		str2[i] = null;
-		// 	}
-		// }
-
-			String y="";
+		
+		String y="";
 		for(int i = 0; i< a.size();i++){
-			
+			System.out.println(str1[i]);
 			if(str[i].contains("be")){
 				a.set(i,"");
 			}
@@ -92,37 +85,42 @@ public class GUI {
 				a.set(i,"");
 			}
 
-			if(str2[i].contains("O")){
-
+			if(str2[i].contains("LOCATION")|| str2[i].contains("ORGANISATION")){
+				y = a.get(i);
+				break;
 			}
 			
-		}
-
-		for (int i = 0; i < a.size(); i++) { 	
-			if(!a.get(i).contains("")){
-				y = a.get(i);   
+			//Cores focuses on entity reference and entity appears first in the ArrayList which is most likely the subject of question
+			// if variable y does not contain entity set it to entity
+			String[] str4 = p1.POS(str3.get(0));
+			if(str4[0].contains("NN")){
+				y = str3.get(0);
+				break;
 			}
-		}   
+		}
+		
+		// for (int i = 0; i < a.size(); i++) { 	
+		// 	if(!a.get(i).contains("")){
+		// 		y = a.get(i);   
+		// 	}
+		// }   
+
+		//initialize Profile object
 		Profile pro = new Profile();
 		String output="";
-		// if(!pro.noun(y).contains("")){
-		// 	output=pro.noun(y);
-		// 	System.out.println(output);
-		// }else if(!pro.adjective(y).contains("")){
-		// 	output = pro.adjective(y);
-		// 	System.out.println(output);
-		// }
-		
 		String set1 = pro.noun(y);
 		String set2 = pro.other(y);
 		String set3 = pro.adjective(y);
 
+		//loop through each method incase of mislabelling by Part-of-speech tagging
 		if(set1 != ""){
 			output = set1;
 		}else if(set2 != ""){
 			output = set2;
 		}else if( set3 != ""){
 			output=set3;
+		}else{
+			output = "I don't know";
 		}
 
 		return output;
