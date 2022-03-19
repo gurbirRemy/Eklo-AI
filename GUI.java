@@ -98,12 +98,7 @@ public class GUI {
 				break;
 			}
 		}
-		
-		// for (int i = 0; i < a.size(); i++) { 	
-		// 	if(!a.get(i).contains("")){
-		// 		y = a.get(i);   
-		// 	}
-		// }   
+	
 
 		//initialize Profile object
 		Profile pro = new Profile();
@@ -120,7 +115,7 @@ public class GUI {
 		}else if( set3 != ""){
 			output=set3;
 		}else{
-			output = "I don't know";
+			output = randDontUnderstand(y);
 		}
 
 		return output;
