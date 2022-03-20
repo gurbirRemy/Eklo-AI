@@ -16,7 +16,7 @@ This class groups all nouns, interjections and adjectives together.
 This class contains functions used from CoreNLP.
 
 ### What we have done :
-For  assignment 3, 
+For  assignment 3, -
 We have made an GUI so the user can interact with the chatbot in a nice interface and see the history.
 
 We used Stanford's CoreNlp to ascertain the crux of the question so as to find a suitable response
