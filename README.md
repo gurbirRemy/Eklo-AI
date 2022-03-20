@@ -15,7 +15,7 @@ This class groups all nouns, interjections and adjectives together.
 
 This class contains functions used from CoreNLP.
 
-### what we have done
+### What we have done :
 For  assignment 3, we used Stanford's CoreNlp to ascertain the crux of the question so as to find a suitable response
 - Lemmetization, Coreference resolution, Part-of-speech tagging and Named entity recognition
   - Lemmitization was used to remove words such as is,am,are .... etc
