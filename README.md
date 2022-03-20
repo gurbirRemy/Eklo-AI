@@ -15,3 +15,7 @@ For  assignment 3, we used Stanford's CoreNlp to ascertain the crux of the quest
   - Part-of-speech tagging was used to remove words that are not nouns, nouns are usually the subject of the question
   - Named entity recognition was also used as a fail safe incase the keyword in the question is not caught
 <img width="1055" alt="Screen Shot 2022-03-19 at 20 29 50" src="https://user-images.githubusercontent.com/72040706/159146810-a0a80b48-7e15-479e-818c-a85f4d653a41.png">
+
+- Profile.java groups all nouns, interjections and adjectives together
+- Process.java contains functions used from CoreNLP
+
