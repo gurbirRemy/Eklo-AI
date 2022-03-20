@@ -5,7 +5,15 @@ This project is a communicative agent that responds to user input in an interact
 This class has the code for all the functionality of the chatbot.  
 
 ### GUI(.java)
-This class has the code for the Interface of the chatbot.  
+This class has the code for the Interface of the chatbot. 
+
+### Profile(.java)
+
+This class groups all nouns, interjections and adjectives together.
+
+### Process(.java)
+
+This class contains functions used from CoreNLP.
 
 ### what we have done
 For  assignment 3, we used Stanford's CoreNlp to ascertain the crux of the question so as to find a suitable response
@@ -16,6 +24,5 @@ For  assignment 3, we used Stanford's CoreNlp to ascertain the crux of the quest
   - Named entity recognition was also used as a fail safe incase the keyword in the question is not caught
 <img width="1055" alt="Screen Shot 2022-03-19 at 20 29 50" src="https://user-images.githubusercontent.com/72040706/159146810-a0a80b48-7e15-479e-818c-a85f4d653a41.png">
 
-- Profile.java groups all nouns, interjections and adjectives together
-- Process.java contains functions used from CoreNLP
+
 
