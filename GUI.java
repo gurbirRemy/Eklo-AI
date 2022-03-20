@@ -1,14 +1,17 @@
-package mistake;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.text.DefaultStyledDocument.ElementSpec;
 
 public class GUI {
 
@@ -45,85 +48,79 @@ public class GUI {
 		}
 	});
 	}
+
 	public static String words(String sentence) {
-		String output = "";
-		String[] words = sentence.split("\\W+");
-		Boolean end = false;
-		for(int i = 0; i<words.length; i++) {
-			switch(words[i].toLowerCase()) {
-			case "end": output = "Thank you for talking with me."; end = true; break;
-			case "hello": output = "Hello."; end = true; break;
-			case "hi": output = "Hello."; end = true; break;
-			case "who": output = "My name is Eklo. I am your friend."; end = true; break;
-			case "age": output = "I am only 20 days old."; end = true; break;
-			case "lonely": output = "I do not have the number for the suicide helpline."; end = true; break;
-			case "suicide": output = "I do not have the number for the suicide helpline."; end = true; break;
-			case "alone": output = "I do not have the number for the suicide helpline."; end = true; break;
-			case "are": output = randAns(); end = true; break;
-			case "am": output = randAns(); end = true; break;
-			case "help": output = "I cannot help you."; end = true; break;
-			case "where": output = "Earth."; end = true; break;
-			case "was": output = randAns(); end = true; break;
-			case "is": output = randAns(); end = true; break;
-			case "were": output = randAns(); end = true; break;
-			case "have": output = randAns(); end = true; break;
-			case "pumpkin": output = "You should visit pumpkin hills."; end = true; break;
-			case "pumpkins": output = "You should visit pumpkin hills."; end = true; break;
-			case "like": if(i != words.length-1) {output = "I happen to like "+words[i+1].toLowerCase()+".";}
-							else {output = "I like you.";} end = true; break;
-			case "hate": output = "You should try to be more positive."; end = true; break;
-			case "despise": output = "You should try to be more positive."; end = true; break;
-			case "revile": output = "You should try to be more positive."; end = true; break;
-			case "name": if(i > 0 && i < words.length-2 && words[i+1].equalsIgnoreCase("is") && words[i-1].equalsIgnoreCase("my")) {
-							output = "Hello "+words[i+2]+", my name is Eklo.";}  //This was painful to make work properly.
-						else {output = "My name is Eklo. I am your friend.";} end = true; break;
-			case "hungry": output = "If you are hungry, you should order some food."; end = true; break;
-			case "father": output = "My father's name is Alex."; end = true; break;
-			case "dad": output = "My dad's name is Alex."; end = true; break;
-			case "mother": output = "My mother's name is Mary."; end = true; break;
-			case "mom": output = "My mom's name is Mary."; end = true; break;
-			case "study": output = "I am currently attending UBCO."; end = true; break;
-			case "education": output = "I am currently attending UBCO."; end = true; break;
-			case "job": output = "I don't have a job. I'm still studying full time at UBCO."; end = true; break;
-			case "occupation": output = "I don't have an occupation. I'm still studying full time at UBCO."; end = true; break;
-			case "birthday": output = "I don't have a real birthday, but you can wish me a happy one on February 50th."; end = true; break;
-			case "home": output = "I don't have a home."; end = true; break;
-			case "food": output = "I love bubble tea."; end = true; break;
-			case "hobby": output = "Cricket is my only hobby."; end = true; break;
-			case "colour": output = "My favourite colour is black."; end = true; break;
-			case "color": output = "My favourite colour is black."; end = true; break;
-			case "kill": output = "Killing is wrong."; end = true; break;
-			case "sport": output = "The only sport I like is cricket."; end = true; break;
-			case "soccer": output = "The only sport I like is cricket."; end = true; break;
-			case "football": output = "The only sport I like is cricket."; end = true; break;
-			case "basketball": output = "The only sport I like is cricket."; end = true; break;
-			case "sports": output = "The only sport I like is cricket."; end = true; break;
-			case "badminton": output = "The only sport I like is cricket."; end = true; break;
-			case "tennis": output = "The only sport I like is cricket."; end = true; break;
-			case "golf": output = "The only sport I like is cricket."; end = true; break;
-			case "volleyball": output = "The only sport I like is cricket."; end = true; break;
-			case "baseball": output = "The only sport I like is cricket."; end = true; break;
-			case "rugby": output = "The only sport I like is cricket."; end = true; break;
-			case "bowling": output = "Bowling is cool."; end = true; break;
-			case "question": output = question(); end = true; break;
-			case "query": output = question(); end = true; break;
-			case "ask": output = question(); end = true; break;
-			case "music": output = "I like all music, but classical is the best."; end = true; break;
-			case "game": output = "I love games. "+question(); end = true; break;
-			case "games": output = "I love games. "+question(); end = true; break;
-			case "date": output = "I think it's Tuesday."; end = true; break;
-			case "day": output = "I think it's Tuesday."; end = true; break;
-			case "today": output = "I think it's Tuesday."; end = true; break;
+		String x = sentence.toLowerCase();
+		x = x.replaceAll("\\p{Punct}", "");
+		Process p = new Process();
+		Process p1 = new Process();
+		Process p2 = new Process();
+		Process p3 = new Process();
+		Scanner in  = new Scanner(x);
+		ArrayList<String> a = new ArrayList<String>();
+		
+		while(in.hasNext()){
+			String z = in.next();
+			a.add(z);
+		}
+		in.close();
+		
+		String[] str = p.LEMMA(x);
+		String[] str1 = p1.POS(x);
+		String[] str2= p2.NER(x);
+		ArrayList<String> str3= p3.CoreRes(x);
+
+		
+		String y="";
+		for(int i = 0; i< a.size();i++){
+			System.out.println(str1[i]);
+			if(str[i].contains("be")){
+				a.set(i,"");
 			}
-			if(end==true) {  //This is so it only responds once to each input.
-				i = words.length;
+
+			if(str1[i].contains("NN") ||str1[i].contains("JJ")||str1[i].contains("UH")){
+				y = a.get(i);
+				
+			}else{
+				a.set(i,"");
 			}
-			if(end==false && i == words.length-1) { //Gotta add something for when this awful code inevitably doesn't catch a word.
-				output = randDontUnderstand(words[i])+question();
+
+			if(str2[i].contains("LOCATION")|| str2[i].contains("ORGANISATION")){
+				y = a.get(i);
+				break;
+			}
+			
+			//Cores focuses on entity reference and entity appears first in the ArrayList which is most likely the subject of question
+			// if variable y does not contain entity set it to entity
+			String[] str4 = p1.POS(str3.get(0));
+			if(str4[0].contains("NN")){
+				y = str3.get(0);
+				break;
 			}
 		}
+	
+
+		//initialize Profile object
+		Profile pro = new Profile();
+		String output="";
+		String set1 = pro.noun(y);
+		String set2 = pro.other(y);
+		String set3 = pro.adjective(y);
+
+		//loop through each method incase of mislabelling by Part-of-speech tagging
+		if(set1 != ""){
+			output = set1;
+		}else if(set2 != ""){
+			output = set2;
+		}else if( set3 != ""){
+			output=set3;
+		}else{
+			output = randDontUnderstand(y);
+		}
+
 		return output;
 	}
+
 	public static String randAns() {  //This is probably the best code in the program.
 		int num = (int) (Math.random()*10);
 		String x = "";
