@@ -16,10 +16,11 @@ This class groups all nouns, interjections and adjectives together.
 This class contains functions used from CoreNLP.
 
 ### What we have done :
-For  assignment 3, -
+For  assignment 3, 
+######
 We have made an GUI so the user can interact with the chatbot in a nice interface and see the history.
 
-We used Stanford's CoreNlp to ascertain the crux of the question so as to find a suitable response
+We used Stanford's CoreNlp to ascertain the crux of the question so as to find a suitable response.
 - Lemmetization, Coreference resolution, Part-of-speech tagging and Named entity recognition
   - Lemmitization was used to remove words such as is,am,are .... etc
   - Coreference resolution was used to detect entities which are usually the main subject of the question
