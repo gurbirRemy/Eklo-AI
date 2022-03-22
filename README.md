@@ -20,6 +20,8 @@ For  assignment 3,
 ######
 We have made an GUI so the user can interact with the chatbot in a nice interface and see the history.
 ######
+We added more possible responses for the chatbot.
+######
 We added  a  feature  that  enables  our  agent  to  give  different  reasonable responses when the user enters something outside the topics.
 ######
 We used Stanford's CoreNlp to ascertain the crux of the question so as to find a suitable response.
