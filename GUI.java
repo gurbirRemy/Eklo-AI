@@ -12,6 +12,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.text.DefaultStyledDocument.ElementSpec;
+import static org.junit.Assert.*;				
+import org.junit.Test;	
 
 public class GUI {
 
@@ -21,7 +23,6 @@ public class GUI {
 		JButton button = new JButton("Enter");
 		JTextField tf = new JTextField(30);
 		JTextArea jArea = new JTextArea();
-		jArea.setEditable(false);
 		button.setBounds(200,50,100,20);
 		panel.add(jArea);
 		panel.add(tf);
@@ -78,7 +79,7 @@ public class GUI {
 				a.set(i,"");
 			}
 
-			if(str1[i].contains("NN") ||str1[i].contains("JJ")||str1[i].contains("UH")){
+			if(str1[i].contains("NN") ||str1[i].contains("JJ")||str1[i].contains("UH")||str1[i].contains("NNP")){
 				y = a.get(i);
 				
 			}else{
@@ -170,4 +171,59 @@ public class GUI {
 	public static void main(String[] args) {
 		new GUI();
 	}
+	
+   @Test
+	public void testGUI()
+	{
+		assertEquals("My name is Eklo. I am your friend.",words("Hi my name is Jafar"));
+		assertEquals("The only sport I like is cricket.",words("Do you like sports?"));
+		assertEquals("The only sport I like is cricket.",words("soccer?"));
+	}
+
+    @Test
+    public void testRandom(){
+       String[] arr =new String[] {"Yes.","No.","Sure.","No way.","Obviously.","No, of course not.","Probably.","Probably not.","Yeah.","Never."}; 
+       String test = words("Canada");
+         assertEquals(true, search(arr, test));
+         
+    }
+
+    @Test
+    public void testQuestion(){
+       String[] arr =new String[] {"Are you in school?","Do you have a job?","Do you like games?","Are you in a relationship?","Have you noticed the man behind you?", "Do you have friends?", "Do you like me?", "How old are you?", "What's your favourite animal?", "What's your favourite colour?"}; 
+       String test = words("games");
+         assertEquals(true, search(arr, test));
+         
+    }
+
+
+
+
+
+
+    private static boolean search(String[] arr, String st)
+    {
+       
+        boolean flag = false;
+        for (String str : arr) {
+            if (str == st) {
+                flag = true;
+                break;
+            }
+
+        }
+ 
+       return flag;
+    }
+
+
+
+ 
+
+
+
+	
 }
+
+
+

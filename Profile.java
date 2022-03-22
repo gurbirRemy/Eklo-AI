@@ -31,6 +31,40 @@ public class Profile {
 			case "volleyball": output = "The only sport I like is cricket.";  break;
 			case "baseball": output = "The only sport I like is cricket.";  break;
             case "bowling": output = "Bowling is cool."; break;
+			case "age": output = "I am only 20 days old.";  break;
+			case "lonely": output = "I do not have the number for the suicide helpline.";  break;
+			case "suicide": output = "I do not have the number for the suicide helpline.";  break;
+			case "alone": output = "I do not have the number for the suicide helpline.";  break;
+			case "are": output = randAns();  break;
+			case "am": output = randAns();  break;
+			case "help": output = "I cannot help you.";  break;
+			case "where": output = "Earth."; break;
+			case "was": output = randAns();  break;
+			case "is": output = randAns();  break;
+			case "were": output = randAns();  break;
+			case "have": output = randAns();  break;
+			case "canada": output = randAns();  break;
+			case "pumpkin": output = "You should visit pumpkin hills."; break;
+			case "pumpkins": output = "You should visit pumpkin hills."; break;
+			case "hate": output = "You should try to be more positive.";  break;
+			case "despise": output = "You should try to be more positive."; break;
+			case "revile": output = "You should try to be more positive."; break;
+			case "hungry": output = "If you are hungry, you should order some food.";  break;
+			case "home": output = "I don't have a home.";  break;
+			case "food": output = "I love bubble tea.";  break;
+			case "hobby": output = "Cricket is my only hobby.";  break;
+			case "colour": output = "My favourite colour is black.";  break;
+			case "color": output = "My favourite colour is black."; break;
+			case "kill": output = "Killing is wrong.";  break;
+			case "question": output = question(); break;
+			case "query": output = question(); break;
+			case "ask": output = question();  break;
+			case "music": output = "I like all music, but classical is the best."; break;
+			case "game": output = "I love games. "+question();  break;
+			case "games": output = question(); break;
+			case "date": output = "I think it's Tuesday.";  break;
+			case "day": output = "I think it's Tuesday.";  break;
+			case "today": output = "I think it's Tuesday.";  break;
         }
         return output;
     }
@@ -56,60 +90,7 @@ public class Profile {
     }
     
 
-    // public String time(String s){
-    //     String output = "";
-    //     switch(s.toLowerCase()){
-    //         case "end": output = "Thank you for talking with me."; end = true; break;
-	// 		case "who": output = "My name is Eklo. I am your friend."; end = true; break;
-	// 		case "age": output = "I am only 20 days old."; end = true; break;
-	// 		case "lonely": output = "I do not have the number for the suicide helpline."; end = true; break;
-	// 		case "suicide": output = "I do not have the number for the suicide helpline."; end = true; break;
-	// 		case "alone": output = "I do not have the number for the suicide helpline."; end = true; break;
-	// 		case "are": output = randAns(); end = true; break;
-	// 		case "am": output = randAns(); end = true; break;
-	// 		case "help": output = "I cannot help you."; end = true; break;
-	// 		case "where": output = "Earth."; end = true; break;
-	// 		case "was": output = randAns(); end = true; break;
-            
-	// 		case "is": output = randAns(); end = true; break;
-	// 		case "were": output = randAns(); end = true; break;
-	// 		case "have": output = randAns(); end = true; break;
-
-	// 		case "pumpkin": output = "You should visit pumpkin hills."; end = true; break;
-	// 		case "pumpkins": output = "You should visit pumpkin hills."; end = true; break;
-	// 		case "like": if(i != words.length-1) {output = "I happen to like "+words[i+1].toLowerCase()+".";}
-	// 						else {output = "I like you.";} end = true; break;
-	// 		case "hate": output = "You should try to be more positive."; end = true; break;
-	// 		case "despise": output = "You should try to be more positive."; end = true; break;
-	// 		case "revile": output = "You should try to be more positive."; end = true; break;
-	// 		case "name": if(i > 0 && i < words.length-2 && words[i+1].equalsIgnoreCase("is") && words[i-1].equalsIgnoreCase("my")) {
-	// 						output = "Hello "+words[i+2]+", my name is Eklo.";}  //This was painful to make work properly.
-	// 					else {output = "My name is Eklo. I am your friend.";} end = true; break;
-	// 		case "hungry": output = "If you are hungry, you should order some food."; end = true; break;
-			
-	// 		case "study": output = "I am currently attending UBCO."; end = true; break;
-	// 		case "education": output = "I am currently attending UBCO."; end = true; break;
-	// 		case "job": output = "I don't have a job. I'm still studying full time at UBCO."; end = true; break;
-	// 		case "occupation": output = "I don't have an occupation. I'm still studying full time at UBCO."; end = true; break;
-	// 		case "home": output = "I don't have a home."; end = true; break;
-	// 		case "food": output = "I love bubble tea."; end = true; break;
-	// 		case "hobby": output = "Cricket is my only hobby."; end = true; break;
-	// 		case "colour": output = "My favourite colour is black."; end = true; break;
-	// 		case "color": output = "My favourite colour is black."; end = true; break;
-	// 		case "kill": output = "Killing is wrong."; end = true; break;
-	// 		case "question": output = question(); end = true; break;
-	// 		case "query": output = question(); end = true; break;
-	// 		case "ask": output = question(); end = true; break;
-	// 		case "music": output = "I like all music, but classical is the best."; end = true; break;
-	// 		case "game": output = "I love games. "+question(); end = true; break;
-	// 		case "games": output = "I love games. "+question(); end = true; break;
-	// 		case "date": output = "I think it's Tuesday."; end = true; break;
-	// 		case "day": output = "I think it's Tuesday."; end = true; break;
-	// 		case "today": output = "I think it's Tuesday."; end = true; break;
-    //     }
-    //     return output;
-    // }
-
+  
     public String question(){
 		int num = (int) (Math.random()*10);
 		String x = "";
