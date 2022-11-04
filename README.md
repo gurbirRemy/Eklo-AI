@@ -34,6 +34,7 @@ We used Stanford's CoreNlp to ascertain the crux of the question so as to find a
 
 
 I have added two API’s to my project -
+
 1.Google Maps street view API- the google street view api inputs  the location coordinates and gives the image of that place using streetview. get/show directions using this API
 
 2. Google Geocoding  API- It accepts the address of a place and gives the exact location coordinates of that place. convert urban addresses and display them in a meaningful 
