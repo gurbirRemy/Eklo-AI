@@ -33,7 +33,7 @@ We used Stanford's CoreNlp to ascertain the crux of the question so as to find a
 <img width="1055" alt="Screen Shot 2022-03-19 at 20 29 50" src="https://user-images.githubusercontent.com/72040706/159146810-a0a80b48-7e15-479e-818c-a85f4d653a41.png">
 
 
-I have added two API’s to my project from assignment 3-
+I have added two API’s to my project -
 1.Google Maps street view API- the google street view api inputs  the location coordinates and gives the image of that place using streetview. get/show directions using this API
 
 2. Google Geocoding  API- It accepts the address of a place and gives the exact location coordinates of that place. convert urban addresses and display them in a meaningful 
